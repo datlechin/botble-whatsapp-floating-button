@@ -1,0 +1,1 @@
+$((function(){var p=$("#whatsapp-floating-button");p.length&&p.floatingWhatsApp({phone:p.data("phone"),popupMessage:p.data("popup-message"),showPopup:p.data("show-popup"),headerTitle:p.data("popup-title"),position:p.data("position")})}));

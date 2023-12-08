@@ -31,9 +31,9 @@
                     name="position"
                     :value="setting('whatsapp-floating-button.position')"
                     :options="[
-                    'left' => trans('plugins/whatsapp-floating-button::whatsapp-floating-button.left'),
-                    'right' => trans('plugins/whatsapp-floating-button::whatsapp-floating-button.right'),
-                ]"
+                        'right' => trans('plugins/whatsapp-floating-button::whatsapp-floating-button.right'),
+                        'left' => trans('plugins/whatsapp-floating-button::whatsapp-floating-button.left'),
+                    ]"
                 />
 
                 <div class="mb-3">

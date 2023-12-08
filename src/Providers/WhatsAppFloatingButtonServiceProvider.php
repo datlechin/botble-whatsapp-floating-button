@@ -26,8 +26,7 @@ class WhatsAppFloatingButtonServiceProvider extends ServiceProvider
                 DashboardMenu::make()
                     ->registerItem([
                         'id' => 'plugins-whatsapp-floating-button',
-                        'priority' => 5,
-                        'parent' => null,
+                        'priority' => 999,
                         'name' => 'plugins/whatsapp-floating-button::whatsapp-floating-button.name',
                         'icon' => version_compare('7.0.0', get_core_version(), '>=') ? 'ti ti-brand-whatsapp' : 'fab fa-whatsapp',
                         'url' => route('whatsapp-floating-button.settings'),

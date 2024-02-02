@@ -19,6 +19,7 @@ class WhatsAppFloatingButtonServiceProvider extends ServiceProvider
             ->loadRoutes()
             ->loadAndPublishTranslations()
             ->publishAssets()
+            ->loadAndPublishConfigurations('permissions')
             ->loadAndPublishViews();
 
         $this->app->booted(function () {
@@ -29,7 +30,7 @@ class WhatsAppFloatingButtonServiceProvider extends ServiceProvider
                         'priority' => 9999,
                         'name' => 'plugins/whatsapp-floating-button::whatsapp-floating-button.name',
                         'icon' => version_compare('7.0.0', get_core_version(), '<=') ? 'ti ti-brand-whatsapp' : 'fab fa-whatsapp',
-                        'url' => route('whatsapp-floating-button.settings'),
+                        'route' => 'whatsapp-floating-button.settings',
                     ]);
 
                 if (setting('whatsapp-floating-button.enabled')) {
@@ -43,7 +44,7 @@ class WhatsAppFloatingButtonServiceProvider extends ServiceProvider
                         ->add('floating-wpp-js', asset('vendor/core/plugins/whatsapp-floating-button/js/floating-wpp.min.js'), ['jquery'])
                         ->add('whatsapp-floating-button-js', asset('vendor/core/plugins/whatsapp-floating-button/js/whatsapp-floating-button.js'), ['floating-wpp-js']);
 
-                    add_filter(THEME_FRONT_FOOTER, function (string|null $data): string|null {
+                    add_filter(THEME_FRONT_FOOTER, function (?string $data): string {
                         return $data . sprintf(
                             '<div id="whatsapp-floating-button" data-phone="%s" data-popup-message="%s" data-show-popup="%s" data-popup-title="%s" data-position="%s"></div>',
                             setting('whatsapp-floating-button.phone_number'),

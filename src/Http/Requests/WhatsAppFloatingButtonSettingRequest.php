@@ -16,6 +16,10 @@ class WhatsAppFloatingButtonSettingRequest extends Request
             'show_popup' => ['nullable', 'required_if:enabled,1', 'boolean'],
             'popup_title' => ['nullable', 'required_if:show_popup,1', 'string'],
             'popup_message' => ['nullable', 'required_if:show_popup,1', 'string'],
+            'size' => ['required', 'integer', 'min:10', 'max:1000'],
+            'z_index' => ['required', 'integer'],
+            'offset_x' => ['required', 'integer'],
+            'offset_y' => ['required', 'integer'],
         ];
     }
 }

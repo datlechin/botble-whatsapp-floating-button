@@ -12,4 +12,8 @@ return [
     'popup_header_title' => 'Popup header title',
     'left' => 'Left',
     'right' => 'Right',
+    'size' => 'Size (px)',
+    'z_index' => 'Z-index',
+    'offset_x' => 'Offset X',
+    'offset_y' => 'Offset Y',
 ];

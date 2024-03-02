@@ -5,7 +5,7 @@
     "provider": "Datlechin\\WhatsAppFloatingButton\\Providers\\WhatsAppFloatingButtonServiceProvider",
     "author": "Ngo Quoc Dat",
     "url": "https://ngoquocdat.dev",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Add a floating WhatsApp button to your website.",
     "minimum_core_version": "6.5.0"
 }

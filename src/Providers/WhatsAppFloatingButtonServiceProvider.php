@@ -41,18 +41,10 @@ class WhatsAppFloatingButtonServiceProvider extends ServiceProvider
                     Theme::asset()
                         ->container('footer')
                         ->usePath(false)
-                        ->add('floating-wpp-js', asset('vendor/core/plugins/whatsapp-floating-button/js/floating-wpp.min.js'), ['jquery'])
-                        ->add('whatsapp-floating-button-js', asset('vendor/core/plugins/whatsapp-floating-button/js/whatsapp-floating-button.js'), ['floating-wpp-js']);
+                        ->add('floating-wpp-js', asset('vendor/core/plugins/whatsapp-floating-button/js/floating-wpp.min.js'), ['jquery']);
 
-                    add_filter(THEME_FRONT_FOOTER, function (?string $data): string {
-                        return $data . sprintf(
-                            '<div id="whatsapp-floating-button" data-phone="%s" data-popup-message="%s" data-show-popup="%s" data-popup-title="%s" data-position="%s"></div>',
-                            setting('whatsapp-floating-button.phone_number'),
-                            setting('whatsapp-floating-button.popup_message'),
-                            setting('whatsapp-floating-button.show_popup', false),
-                            setting('whatsapp-floating-button.popup_title'),
-                            setting('whatsapp-floating-button.position', 'right')
-                        );
+                    add_filter(THEME_FRONT_FOOTER, function (string |null $data): string {
+                        return $data . view('plugins/whatsapp-floating-button::show');
                     });
                 }
             });

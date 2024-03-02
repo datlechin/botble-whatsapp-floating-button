@@ -36,6 +36,34 @@
                     ]"
                 />
 
+                <x-core-setting::text-input
+                    type="number"
+                    :label="trans('plugins/whatsapp-floating-button::whatsapp-floating-button.offset_x')"
+                    :value="setting('whatsapp-floating-button.offset_x', 20)"
+                    name="offset_x"
+                />
+
+                <x-core-setting::text-input
+                    type="number"
+                    :label="trans('plugins/whatsapp-floating-button::whatsapp-floating-button.offset_y')"
+                    :value="setting('whatsapp-floating-button.offset_y', 20)"
+                    name="offset_y"
+                />
+
+                <x-core-setting::text-input
+                    type="number"
+                    :label="trans('plugins/whatsapp-floating-button::whatsapp-floating-button.size')"
+                    :value="setting('whatsapp-floating-button.size', 60)"
+                    name="size"
+                />
+
+                <x-core-setting::text-input
+                    type="number"
+                    :label="trans('plugins/whatsapp-floating-button::whatsapp-floating-button.z_index')"
+                    :value="setting('whatsapp-floating-button.z_index', 999)"
+                    name="z_index"
+                />
+
                 <div class="mb-3">
                     <x-core-setting::on-off
                         :label="trans('plugins/whatsapp-floating-button::whatsapp-floating-button.show_popup')"

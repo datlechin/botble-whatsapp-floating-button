@@ -10,7 +10,7 @@
 
 <script>
     window.addEventListener('load', function() {
-        const whatsappFloatingButton = document.getElementById('whatsapp-floating-button')
+        const whatsappFloatingButton = document.getElementById('whatsapp-floating-button');
 
         if (whatsappFloatingButton) {
             $(whatsappFloatingButton).floatingWhatsApp({
@@ -25,7 +25,7 @@
                 autoOpenTimeout: 0,
                 headerColor: '#128C7E',
                 zIndex: {{ setting('whatsapp-floating-button.z_index', 999) }},
-            })
+            });
         }
-    })
+    });
 </script>
